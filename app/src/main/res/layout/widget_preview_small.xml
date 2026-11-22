@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="6dp">
+    <include layout="@layout/widget_preview_header" />
+    <include layout="@layout/widget_preview_row_high" />
+    <include layout="@layout/widget_preview_row_medium" />
+</LinearLayout>

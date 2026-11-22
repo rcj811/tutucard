@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher"
+        android:shortcutId="add_task"
+        android:shortcutLongLabel="@string/shortcut_add_task"
+        android:shortcutShortLabel="@string/shortcut_add_task">
+        <intent
+            android:action="tw.knox.dailytasks.ADD_TASK"
+            android:targetClass="tw.knox.dailytasks.MainActivity"
+            android:targetPackage="tw.knox.dailytasks" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher"
+        android:shortcutId="add_memo"
+        android:shortcutLongLabel="@string/shortcut_add_memo"
+        android:shortcutShortLabel="@string/shortcut_add_memo">
+        <intent
+            android:action="tw.knox.dailytasks.ADD_MEMO"
+            android:targetClass="tw.knox.dailytasks.MainActivity"
+            android:targetPackage="tw.knox.dailytasks" />
+    </shortcut>
+</shortcuts>

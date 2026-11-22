@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="6dp">
+    <include layout="@layout/widget_preview_header" />
+    <include layout="@layout/widget_preview_row_high" />
+    <include layout="@layout/widget_preview_row_medium" />
+    <include layout="@layout/widget_preview_row_low" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:text="4月17日 (四) 三月二十"
+        android:textColor="@color/widget_text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+    <include layout="@layout/widget_preview_row_tomorrow" />
+    <include layout="@layout/widget_preview_row_home" />
+</LinearLayout>

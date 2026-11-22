@@ -1,0 +1,21 @@
+*.iml
+.gradle/
+.idea/
+local.properties
+build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.jks
+*.keystore
+
+# local helper / build folders
+_claude/
+outputs/
+qa/
+.gradle-user-home/
+.android-user-home*/
+.android-build-home/
+.build-user-home/
+.kotlin/

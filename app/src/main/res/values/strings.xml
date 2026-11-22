@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">吐兔卡</string>
+    <string name="widget_small_name">吐兔卡 小尺寸</string>
+    <string name="widget_medium_name">吐兔卡 中尺寸</string>
+    <string name="widget_large_name">吐兔卡 大尺寸</string>
+    <string name="widget_small_description">2 × 1，可捲動任務與農曆日期</string>
+    <string name="widget_medium_description">4 × 2，可捲動任務與農曆日期</string>
+    <string name="widget_large_description">4 × 4，可捲動任務與農曆日期分組</string>
+    <string name="notification_done">✓ 已完成</string>
+    <string name="notification_snooze_10">延後10分鐘</string>
+    <string name="snooze_5">5 分鐘</string>
+    <string name="snooze_10">10 分鐘</string>
+    <string name="snooze_30">30 分鐘</string>
+    <string name="snooze_60">1 小時</string>
+    <string name="widget_unchecked">□</string>
+    <string name="widget_checked">☑</string>
+    <string name="add">+</string>
+    <string name="shortcut_add_task">新增任務</string>
+    <string name="shortcut_add_memo">新增筆記</string>
+</resources>
