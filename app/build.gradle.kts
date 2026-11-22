@@ -18,6 +18,18 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // GitHub Actions 透過 DEBUG_KEYSTORE_PATH 使用與電腦相同的 debug 簽章；本機編譯維持預設
+    signingConfigs {
+        getByName("debug") {
+            System.getenv("DEBUG_KEYSTORE_PATH")?.let { path ->
+                storeFile = file(path)
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
+        }
+    }
+
     buildFeatures { compose = true }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

@@ -21,14 +21,14 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      # 若有設定 DEBUG_KEYSTORE_BASE64，使用與電腦相同的簽章，新版可直接覆蓋安裝
+      # 使用 DEBUG_KEYSTORE_BASE64（與電腦相同的 debug 簽章），新版可直接覆蓋安裝
       - name: Restore debug keystore
         env:
           KEYSTORE_B64: ${{ secrets.DEBUG_KEYSTORE_BASE64 }}
         run: |
           if [ -n "$KEYSTORE_B64" ]; then
-            mkdir -p ~/.android
-            echo "$KEYSTORE_B64" | base64 -d > ~/.android/debug.keystore
+            echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/debug.keystore"
+            echo "DEBUG_KEYSTORE_PATH=$RUNNER_TEMP/debug.keystore" >> "$GITHUB_ENV"
             echo "Using provided debug keystore"
           else
             echo "::warning::DEBUG_KEYSTORE_BASE64 not set; APK is signed with a new debug key"
@@ -43,6 +43,11 @@ jobs:
           VERSION=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
           cp app/build/outputs/apk/debug/app-debug.apk "TuTuCard-v${VERSION}-debug.apk"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Show signing certificate
+        run: |
+          APKSIGNER=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -1)
+          "$APKSIGNER" verify --print-certs TuTuCard-v${{ steps.apk.outputs.version }}-debug.apk | grep -i sha-256
 
       - uses: actions/upload-artifact@v4
         with:
